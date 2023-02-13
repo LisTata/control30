@@ -4,9 +4,9 @@
 select e.name from employer as e join salary_grade as s on(e.salary>s.min_salary and e.salary<s.max_salary) where s.grade=2 or s.grade=3;
 
 --напишите запрос в sql, чтобы найти информацию о наиболее высокооплачиваемом сотруднике
-select e.name from employer as e join department as d on(e.department_id=d.id) group by e.department_id order by e.salary desc limit 1;
+select e.name,e.salary from employer as e join department as d on(e.department_id=d.id) order by e.salary desc limit 1;
 --Напишите запрос в SQL, чтобы перечислить имена сотрудников, которые получают самую высокую зарплату в каждом отделе
-select e.name from employer as e join department as d on(e.department_id=d.id) group by e.department_id order by e.salary desc ;
+select e.name,e.salary from employer as e join department as d on(e.department_id=d.id) order by e.salary desc;
 
 --Напишите запрос в SQL, чтобы найти отдел, где нет сотрудников
 select d.name from department as d left join employer as e on(d.id=e.department_id) where e.name=null;
