@@ -9,4 +9,4 @@ select e.name,e.salary from employer as e join department as d on(e.department_i
 select e.name,e.salary from employer as e join department as d on(e.department_id=d.id) order by e.salary desc;
 
 --Напишите запрос в SQL, чтобы найти отдел, где нет сотрудников
-select d.name from department as d left join employer as e on(d.id=e.department_id) where e.name=null;
+select d.name from department as d join employer as e on(not d.id=e.department_id);
